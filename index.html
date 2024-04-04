@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icono.webp" type="image/x-icon">
+    <title>Compra colores</title>
+</head>
+
+<body>
+    <div id="full-container">
+        <header id="header">
+            <h1>MiSuper</h1>
+            <form id="form-header">
+                <input type="text" name="search" id="search" placeholder="Busca algún color">
+                <input type="submit" value="Buscar" id="submit-header">
+            </form>
+            <nav>
+                <ul>
+                    <li><a href="#">Mi&nbsp;cuenta</a></li>
+                    <li><a href="#">Carrito</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="container">
+            <div id="filter">
+                <h2 id="filter-header">Filtar<img src="filter.png" alt="mostrar"></h2>
+                <form id="filter-form">
+                    <label for="year">Filtrar por año</label>
+                    <select name="year" id="year">
+                        <option value="">Filtrar por año</option>
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                    </select>
+                    <label for="name">Filtrar por nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Filtrar">
+                    <input type="submit" value="Filtrar" id="submit-filter">
+                </form>
+            </div>
+            <div id="content">
+                <h2>Resultados</h2>
+                <p id="filters">Filtros: <span id="text-year">2002</span> <span id="text-search">comida</span> <button id="clear-filters">Eliminar filtros</button></p>
+
+                <div id="card-container">
+                    <!--Aquí van las cartas generadas con JS-->
+                </div>
+            </div>
+        </div>
+
+        <nav id="pages">
+            <p>Ir a la página</p>
+            <ul>
+                <li><a href="#" id="page1">1</a></li>
+                <li><a href="#" id="page2">2</a></li>
+            </ul>
+        </nav>
+
+        <footer id="footer">
+            Creado por Zaid Alberto Ramírez Hernández
+        </footer>
+    </div>
+    
+    <script src="main.js"></script>
+
+</body>
+
+</html>
