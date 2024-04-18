@@ -1,29 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&family=Workbench');
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Wix Madefor Text", sans-serif;
 }
 
-html{
+html {
     font-size: 16px;
 }
 
-#full-container{
+#full-container {
     display: grid;
-    grid-template-areas: 
-    "header header header"
-    ". container ."
-    "nav nav nav"
-    "footer footer footer"
+    grid-template-areas:
+        "header header header"
+        ". container ."
+        "nav nav nav"
+        "footer footer footer"
     ;
     grid-template-columns: 10% 80% 10%;
     background: url("background.jpg");
     min-height: 100vh;
 }
 
-#header{
+#header {
     grid-area: header;
     display: grid;
     grid-template-columns: [start] 15% [title] 50% [search] 35% [nav];
@@ -34,48 +34,48 @@ html{
     padding: 15px 0;
 }
 
-#header h1{
+#header h1 {
     font-family: "Workbench", sans-serif;
     font-weight: 100;
 }
 
-#header h1{
+#header h1 {
     cursor: default;
 }
 
-#header form{
+#header form {
     display: grid;
     grid-template-columns: 7fr 1fr;
     width: 90%;
 }
 
 #header input[type=text],
-#header input[type=submit]{
+#header input[type=submit] {
     padding: 10px;
     border: 1px solid #333;
 }
 
-#header input[type=text]{
+#header input[type=text] {
     border-radius: 5px 0px 0px 5px;
 }
 
-#header input[type=submit]{
+#header input[type=submit] {
     border-radius: 0px 5px 5px 0px;
     margin-left: -1px;
     background: #fcab75;
     cursor: pointer;
 }
 
-#header input[type=submit]:hover{
+#header input[type=submit]:hover {
     background: #ff7f29;
 }
 
-#header nav{
+#header nav {
     justify-self: end;
     width: 70%;
 }
 
-#header ul{
+#header ul {
     width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -83,18 +83,18 @@ html{
     list-style-type: none;
 }
 
-#header ul li a{
+#header ul li a {
     color: black;
     text-decoration: none;
     font-size: 1.1rem;
 }
 
-#header ul li:hover{
+#header ul li:hover {
     transform: scale(1.1);
     font-weight: bold;
 }
 
-#container{
+#container {
     margin: 40px 0 40px 0;
     display: grid;
     grid-area: container;
@@ -102,44 +102,49 @@ html{
     background: white;
 }
 
-#container h2{
+#container h2 {
     border-bottom: 1px solid #333;
 }
 
-#filter{
+#filter {
     padding: 5%;
     background: #ef8a3c77;
     border-radius: 10px 0 0 10px;
     border: 1px solid black;
 }
 
-#filter img{
+#filter img {
     display: none;
 }
 
-#filter form{
+#filter form {
     display: grid;
     justify-items: center;
 }
 
-#filter form label{
+#filter form label {
     margin: 20px 0 3px 0;
     text-align: center;
 }
 
 #filter select,
-#filter input{
+#filter input {
     width: 90%;
     border: 1px solid #333;
     border-radius: 5px;
     padding: 5px;
 }
 
-#filter input[type=text]{
+#filter input[type=text] {
     margin-bottom: 15px;
 }
 
-#content{
+#img-filter {
+    transform: rotate(180deg);
+    transition: all 300ms;
+}
+
+#content {
     border-radius: 0 10px 10px 0;
     border-top: 1px solid black;
     border-right: 1px solid black;
@@ -147,35 +152,36 @@ html{
     padding: 1.1%;
 }
 
-#filters{
+#filters {
     margin-top: 5px;
+    display: none;
 }
 
-#filters span{
+#filters span {
     border: 1px solid rgb(170, 4, 4);
     border-radius: 5px;
     padding: 0px 3px;
     color: red;
 }
 
-#filters button{
+#filters button {
     padding: 1px;
 }
 
-#card-container{
+#card-container {
     padding: 1% 0 1% 0;
     display: grid;
     grid-auto-rows: 160px;
     grid-template-columns: 1fr 1fr;
 }
 
-.card{
+.card {
     display: grid;
-    grid-template-areas: 
-    "image title"
-    "image date"
-    "image text"
-    "image phantom";
+    grid-template-areas:
+        "image title"
+        "image date"
+        "image text"
+        "image phantom";
     grid-template-columns: 1fr 2fr;
     align-items: center;
     grid-column-gap: 10px;
@@ -185,20 +191,20 @@ html{
     margin: 5px;
 }
 
-.card-image{
+.card-image {
     width: 100%;
     height: 100%;
     grid-area: image;
 }
 
-#pages{
+#pages {
     grid-area: nav;
     justify-self: center;
     margin-bottom: 40px;
     background: transparent;
 }
 
-#pages ul{
+#pages ul {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -208,22 +214,22 @@ html{
     background-color: #ef8a3c77;
 }
 
-#pages ul li{
+#pages ul li {
     list-style: none;
     text-align: center;
     width: 100%;
 }
 
-#pages a{
+#pages a {
     display: block;
     text-decoration: none;
     padding: 5px 0;
     width: 100%;
 }
 
-#footer{
+#footer {
     grid-area: footer;
-    
+
     padding: 20px 0;
     text-align: center;
     background: linear-gradient(to top, #ff7f29, #ff7f29 0%, #fcab75 100%);
@@ -232,90 +238,96 @@ html{
     bottom: 0;
 }
 
-@media (max-width:1300px){
-    #header nav{
-    width: 80%;
+@media (max-width:1300px) {
+    #header nav {
+        width: 80%;
     }
 }
 
-@media (max-width:1100px){
-    #header nav{
+@media (max-width:1100px) {
+    #header nav {
         width: 90%;
     }
 
-    #header ul{
+    #header ul {
         width: 100%;
     }
 }
 
-@media (max-width:900px){
-    #header nav{
+@media (max-width:900px) {
+    #header nav {
         width: 100%;
     }
 }
 
-@media (max-width:800px){
-    #header{
-        grid-template-areas: 
-        "title title"
-        "search nav"
+@media (max-width:800px) {
+    #header {
+        grid-template-areas:
+            "title title"
+            "search nav"
         ;
         grid-template-columns: 1fr 1fr;
     }
 
-    #header h1{
+    #header h1 {
         grid-area: title;
         margin-bottom: 15px;
     }
 
-    #header form{
+    #header form {
         grid-area: search;
     }
 
-    #header nav{
+    #header nav {
         grid-area: nav;
     }
 }
 
-@media (max-width:640px){
-    #header{
-        grid-template-areas: 
-        "title"
-        "search"
-        "nav"
+@media (max-width:640px) {
+    #header {
+        grid-template-areas:
+            "title"
+            "search"
+            "nav"
         ;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: auto;
         padding-bottom: 0;
     }
 
-    #header h1{
+    #header h1 {
         margin-bottom: 15px;
     }
 
-    #card-container{
-    grid-template-columns: auto;
+    #card-container {
+        grid-template-columns: auto;
     }
 
-    #container{
+    #container {
         grid-template-columns: 1fr 3fr;
     }
 }
 
-@media (max-width:450px){
-    #container{
+@media (min-width:450px) {
+    #filter form {
+        display: block;
+    }
+}
+
+@media (max-width:450px) {
+    #container {
         grid-template-columns: 1fr;
     }
 
-    #filter{
+    #filter {
         border-radius: 10px 10px 0 0;
     }
 
-    #filter form{
-        display: none;
+    #filter form {
+        display: block;
     }
 
-    #content{
+    #content {
         border-radius: 0 0 10px 10px;
         border-top: none;
         border-right: 1px solid black;
@@ -324,7 +336,7 @@ html{
         padding: 5%;
     }
 
-    #filter img{
+    #filter img {
         width: 10px;
         display: inline-block;
         margin-left: 10px;
