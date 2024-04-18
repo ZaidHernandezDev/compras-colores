@@ -51,7 +51,7 @@ submitHeader.addEventListener("click", (e) => {
     let valueInput = inputHeader.value.trim();
     filterSearch(valueInput);
     filters.style.display = 'block';
-})
+});
 
 //Filtrar desde la barra lateral
 submitFilter.addEventListener("click", (e) => {
@@ -60,7 +60,7 @@ submitFilter.addEventListener("click", (e) => {
     let valueInput = filterFormName.value.trim();
     filterSearch(valueInput, valueSelect);
     filters.style.display = 'block';
-})
+});
 
 //Eliminar filtros desde boton
 clearFilters.addEventListener("click", (e) => {
@@ -102,8 +102,8 @@ filterHeader.addEventListener("click", () => {
 
 //Filtrar los resultados buscando en la base de datos completa
 async function filterSearch(name, year) {
+
     try {
-        let error = 0;
         let filteredResponse = [];
         let fullData = [];
         let response1 = await fetch(`https://reqres.in/api/unknown?page=1`);
@@ -113,13 +113,11 @@ async function filterSearch(name, year) {
         fullData = [...data1.data, ...data2.data];
 
         fullData.forEach((value) => {
-
+            console.log('value', value);
             //Cuando nos dan name y year
             if ((!isNaN(year)) && (name !== '')) {
                 if (value.year === year || value.name.includes(name)) {
                     filteredResponse.push(value);
-                } else {
-                    error = 1;
                 }
                 printFilter(name, year);
 
@@ -127,8 +125,6 @@ async function filterSearch(name, year) {
             } else if ((!isNaN(year)) && (name === '')) {
                 if (value.year === year) {
                     filteredResponse.push(value);
-                } else {
-                    error = 1;
                 }
                 printFilter(undefined, year);
 
@@ -137,8 +133,6 @@ async function filterSearch(name, year) {
                 if (value.name.includes(name)) {
                     console.log('nos dieron solamentename', )
                     filteredResponse.push(value);
-                } else {
-                    error = 1;
                 }
                 printFilter(name);
 
@@ -148,8 +142,9 @@ async function filterSearch(name, year) {
                 filters.style.display = 'none';
 }
         })
+        console.log('filteredResponse', filteredResponse);
             printResult(filteredResponse);
-            if (error === 1) {
+            if (filteredResponse.length == 0) {
                 cardContainer.textContent = "No hay colores que coincidan con tu búsqueda"
             }
     } catch (error) {
